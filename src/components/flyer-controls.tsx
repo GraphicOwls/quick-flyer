@@ -3,7 +3,16 @@
 'use client'
 import { useState } from 'react'
 import { format } from 'date-fns'
-import { Calendar as CalendarIcon } from 'lucide-react'
+import {
+	Building2,
+	Calendar as CalendarIcon,
+	Clock,
+	Image,
+	ImageIcon,
+	MapPin,
+	User,
+	Users,
+} from 'lucide-react'
 
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -22,7 +31,11 @@ export const FlyerControls = () => {
 	return (
 		<div className='grid grid-cols-1 gap-6 pt-9'>
 			<div>
-				<Label htmlFor='artist' className='block mb-2'>
+				<Label
+					htmlFor='artist'
+					className='mb-2 flex items-center justify-start'
+				>
+					<User className='mr-2 h-4 w-4' />
 					Artist:
 				</Label>
 				<Input
@@ -33,7 +46,11 @@ export const FlyerControls = () => {
 				/>
 			</div>
 			<div>
-				<Label htmlFor='guest-artists' className='block mb-2'>
+				<Label
+					htmlFor='guest-artists'
+					className='mb-2 flex items-center justify-start'
+				>
+					<Users className='mr-2 h-4 w-4' />
 					Guest Artists:
 				</Label>
 				<Input
@@ -43,19 +60,31 @@ export const FlyerControls = () => {
 				/>
 			</div>
 			<div>
-				<Label htmlFor='venue-name' className='block mb-2'>
+				<Label
+					htmlFor='venue-name'
+					className='mb-2 flex items-center justify-start'
+				>
+					<Building2 className='mr-2 h-4 w-4' />
 					Venue Name:
 				</Label>
 				<Input id='venue-name' type='text' placeholder='The House of Blues' />
 			</div>
 			<div>
-				<Label htmlFor='venue-mark' className='block mb-2'>
+				<Label
+					htmlFor='venue-mark'
+					className='mb-2 flex items-center justify-start'
+				>
+					<Building2 className='mr-2 h-4 w-4' />
 					Venue Mark:
 				</Label>
 				<Input id='venue-mark' type='text' placeholder='At Disney Springs' />
 			</div>
 			<div>
-				<Label htmlFor='address' className='block mb-2'>
+				<Label
+					htmlFor='address'
+					className='mb-2 flex items-center justify-start'
+				>
+					<MapPin className='mr-2 h-4 w-4' />
 					Venue Address:
 				</Label>
 				<Input
@@ -65,7 +94,11 @@ export const FlyerControls = () => {
 				/>
 			</div>
 			<div>
-				<Label htmlFor='picture' className='block mb-2'>
+				<Label
+					htmlFor='picture'
+					className='mb-2 flex items-center justify-start'
+				>
+					<CalendarIcon className='mr-2 h-4 w-4' />
 					Event Date:
 				</Label>
 				<Popover>
@@ -92,13 +125,18 @@ export const FlyerControls = () => {
 				</Popover>
 			</div>
 			<div>
-				<Label htmlFor='time' className='block mb-2'>
+				<Label htmlFor='time' className='mb-2 flex items-center justify-start'>
+					<Clock className='mr-2 h-4 w-4' />
 					Event Time:
 				</Label>
 				<Input id='time' type='text' placeholder='6pm to 10pm' />
 			</div>
 			<div className='block'>
-				<Label htmlFor='picture' className='block mb-2'>
+				<Label
+					htmlFor='picture'
+					className='mb-2 flex items-center justify-start'
+				>
+					<ImageIcon className='mr-2 h-4 w-4' />
 					Flyer Image:
 				</Label>
 				<Input

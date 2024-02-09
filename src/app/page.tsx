@@ -4,7 +4,7 @@ import { FlyerControls } from '@/components/flyer-controls'
 import FlyerOne from '@/components/flyer-designs/flyer-01'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
-import { Zap } from 'lucide-react'
+import { Download, HardDriveDownload, Zap } from 'lucide-react'
 
 export default function Home() {
 	return (
@@ -25,8 +25,12 @@ export default function Home() {
 							picture='/paul-guitar.png'
 						/>
 					</div>
-					<Button className='w-full mt-3 max-w-[620px]' variant={'outline'}>
-						Download Flyer Image
+					<Button
+						className='w-full mt-3 max-w-[620px] flex items-center justify-center'
+						variant={'outline'}
+					>
+						Download Image
+						<HardDriveDownload className='ml-3 h-4 w-4' />
 					</Button>
 					<ModeToggle className='absolute top-6 right-6' />
 				</div>
