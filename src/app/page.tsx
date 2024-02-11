@@ -14,16 +14,7 @@ export default function Home() {
 				<div className='flex flex-col items-center justify-center flex-grow relative p-6 canvas-container'>
 					{/* CANVAS */}
 					<div className='w-full max-w-[620px] aspect-3/4 bg-tertiary border border-border rounded-xl overflow-hidden relative z-20 p-6'>
-						<FlyerOne
-							artist='Paul Damon Band'
-							guestArtists='with Marc Moreno, Carlos Puga, David Young and Michael Delwarte'
-							venueName='House of Blues'
-							venueMark='At Disney Springs'
-							address='1490 E Buena Vista Dr, Orlando, FL 32830'
-							date={new Date()}
-							time='6pm to 10pm'
-							picture='/paul-guitar.png'
-						/>
+						<FlyerOne />
 					</div>
 					<Button
 						className='w-full mt-3 max-w-[620px] flex items-center justify-center'
