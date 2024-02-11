@@ -10,7 +10,7 @@ import { Toaster } from '@/components/ui/sonner'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'Quick Flyer',
+	title: 'Quick Flyer - Flyer creator for shows',
 	description: 'Generate a quick flyer for your event!',
 }
 

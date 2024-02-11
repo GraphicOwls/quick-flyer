@@ -73,7 +73,7 @@ export const FlyerControls = () => {
 	}
 
 	return (
-		<div className='flex flex-col flex-1 gap-6 pt-9 p-6 h-full overflow-scroll'>
+		<div className='flex flex-col flex-1 gap-6 p-6 h-full overflow-scroll'>
 			<div>
 				<Label
 					htmlFor='artist'
