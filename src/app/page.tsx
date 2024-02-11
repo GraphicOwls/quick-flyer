@@ -35,7 +35,7 @@ export default function Home() {
 					<ModeToggle className='absolute top-6 right-6' />
 				</div>
 				{/* SIDEBAR */}
-				<div className='p-6 w-full max-w-96 border-l border-border relative'>
+				<div className='p-8 w-full max-w-96 border-l border-border relative'>
 					<div className='flex items-center gap-3'>
 						<Zap size={24} />
 						<h3 className='text-lg font-bold'>Quick Flyer</h3>

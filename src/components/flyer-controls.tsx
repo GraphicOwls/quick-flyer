@@ -1,13 +1,13 @@
 /** @format */
 
 'use client'
-import { useState } from 'react'
+import { useEffect, useState, useRef, useContext } from 'react'
+import { FlyerContext } from '@/providers/flyer-context'
 import { format } from 'date-fns'
 import {
 	Building2,
 	Calendar as CalendarIcon,
 	Clock,
-	Image,
 	ImageIcon,
 	MapPin,
 	User,
@@ -26,7 +26,49 @@ import {
 } from '@/components/ui/popover'
 
 export const FlyerControls = () => {
+	const { flyerContent, setFlyerContent = () => {} } =
+		useContext(FlyerContext) || {}
+
 	const [date, setDate] = useState<Date>()
+
+	useEffect(() => {
+		if (!date) return
+		setFlyerContent((flyerContent) => ({
+			...flyerContent,
+			eventDate: date ? format(date, 'PP') : '',
+		}))
+	}, [date, setFlyerContent])
+
+	const toCamelCase = (str: string): string => {
+		return str
+			.split('-')
+			.reduce((result: string, word: string, index: number): string => {
+				return (
+					result + (index === 0 ? word : word[0].toUpperCase() + word.slice(1))
+				)
+			}, '')
+	}
+
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement>,
+		defaultValue: string,
+	): void => {
+		const { id, value } = e.target
+		const camelCaseId = toCamelCase(id) as keyof typeof flyerContent
+
+		if (e.target.value === '') {
+			setFlyerContent((flyerContent) => ({
+				...flyerContent,
+				[camelCaseId]: defaultValue,
+			}))
+			return
+		} else {
+			setFlyerContent((flyerContent) => ({
+				...flyerContent,
+				[camelCaseId]: value,
+			}))
+		}
+	}
 
 	return (
 		<div className='grid grid-cols-1 gap-6 pt-9'>
@@ -42,7 +84,7 @@ export const FlyerControls = () => {
 					id='artist'
 					type='text'
 					placeholder='Paul Dmon Band'
-					value='Paul Damon Band'
+					onChange={(e) => handleChange(e, 'Artist Name')}
 				/>
 			</div>
 			<div>
@@ -57,6 +99,7 @@ export const FlyerControls = () => {
 					id='guest-artists'
 					type='text'
 					placeholder='with Gerry Wiggins, Red Calendar, etc.'
+					onChange={(e) => handleChange(e, 'with Special Guests')}
 				/>
 			</div>
 			<div>
@@ -67,7 +110,12 @@ export const FlyerControls = () => {
 					<Building2 className='mr-2 h-4 w-4' />
 					Venue Name:
 				</Label>
-				<Input id='venue-name' type='text' placeholder='The House of Blues' />
+				<Input
+					id='venue-name'
+					type='text'
+					placeholder='The House of Blues'
+					onChange={(e) => handleChange(e, 'The House of Blues')}
+				/>
 			</div>
 			<div>
 				<Label
@@ -77,7 +125,12 @@ export const FlyerControls = () => {
 					<Building2 className='mr-2 h-4 w-4' />
 					Venue Mark:
 				</Label>
-				<Input id='venue-mark' type='text' placeholder='At Disney Springs' />
+				<Input
+					id='venue-mark'
+					type='text'
+					placeholder='At Disney Springs'
+					onChange={(e) => handleChange(e, 'At Disney Springs')}
+				/>
 			</div>
 			<div>
 				<Label
@@ -91,6 +144,9 @@ export const FlyerControls = () => {
 					id='address'
 					type='text'
 					placeholder='1490 E Buena Vista Dr, Orlando, FL 32830'
+					onChange={(e) =>
+						handleChange(e, '1490 E Buena Vista Dr, Orlando, FL 32830')
+					}
 				/>
 			</div>
 			<div>
@@ -129,7 +185,12 @@ export const FlyerControls = () => {
 					<Clock className='mr-2 h-4 w-4' />
 					Event Time:
 				</Label>
-				<Input id='time' type='text' placeholder='6pm to 10pm' />
+				<Input
+					id='time'
+					type='text'
+					placeholder='6pm to 10pm'
+					onChange={(e) => handleChange(e, '6pm to 10pm')}
+				/>
 			</div>
 			<div className='block'>
 				<Label
@@ -143,6 +204,7 @@ export const FlyerControls = () => {
 					id='picture'
 					type='file'
 					className='cursor-pointer file:text-primary/40 block bg-tertiary'
+					onChange={(e) => handleChange(e, '')}
 				/>
 			</div>
 		</div>
