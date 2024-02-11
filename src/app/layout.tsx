@@ -5,6 +5,7 @@ import '../styles/globals.css'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { FlyerProvider } from '@/providers/flyer-context'
 import { Inter } from 'next/font/google'
+import { Toaster } from '@/components/ui/sonner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,6 +29,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<FlyerProvider>{children}</FlyerProvider>
+					<Toaster richColors position='bottom-center' />
 				</ThemeProvider>
 			</body>
 		</html>

@@ -12,6 +12,7 @@ import {
 	MapPin,
 	User,
 	Users,
+	Palette,
 } from 'lucide-react'
 
 import { Input } from '@/components/ui/input'
@@ -24,6 +25,8 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from '@/components/ui/popover'
+
+import { CirclePicker } from 'react-color'
 
 export const FlyerControls = () => {
 	const { flyerContent, setFlyerContent = () => {} } =
@@ -206,6 +209,16 @@ export const FlyerControls = () => {
 					className='cursor-pointer file:text-primary/40 block bg-tertiary'
 					onChange={(e) => handleChange(e, '')}
 				/>
+			</div>
+			<div className='block'>
+				<Label
+					htmlFor='picture'
+					className='mb-4 flex items-center justify-start'
+				>
+					<Palette className='mr-2 h-4 w-4' />
+					Theme Color:
+				</Label>
+				<CirclePicker />
 			</div>
 		</div>
 	)

@@ -7,7 +7,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { HardDriveDownload, Zap } from 'lucide-react'
 import html2canvas from 'html2canvas'
-import { backgroundClip } from 'html2canvas/dist/types/css/property-descriptors/background-clip'
+import { toast } from 'sonner'
 
 export default function Home() {
 	function downloadImage() {
@@ -18,6 +18,7 @@ export default function Home() {
 			link.download = 'flyer.png'
 			link.href = canvas.toDataURL('image/png')
 			link.click()
+			toast.success('Your image has started downloading! 🎉')
 		})
 	}
 
