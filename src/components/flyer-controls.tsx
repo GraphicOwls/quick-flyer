@@ -25,7 +25,6 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from '@/components/ui/popover'
-
 import { CirclePicker } from 'react-color'
 
 export const FlyerControls = () => {
@@ -74,7 +73,7 @@ export const FlyerControls = () => {
 	}
 
 	return (
-		<div className='grid grid-cols-1 gap-6 pt-9'>
+		<div className='flex flex-col flex-1 gap-6 pt-9 p-6 h-full overflow-scroll'>
 			<div>
 				<Label
 					htmlFor='artist'
@@ -154,7 +153,7 @@ export const FlyerControls = () => {
 			</div>
 			<div>
 				<Label
-					htmlFor='picture'
+					htmlFor='evet-date'
 					className='mb-2 flex items-center justify-start'
 				>
 					<CalendarIcon className='mr-2 h-4 w-4' />
@@ -212,7 +211,7 @@ export const FlyerControls = () => {
 			</div>
 			<div className='block'>
 				<Label
-					htmlFor='picture'
+					htmlFor='theme-color'
 					className='mb-4 flex items-center justify-start'
 				>
 					<Palette className='mr-2 h-4 w-4' />

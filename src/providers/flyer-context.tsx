@@ -12,6 +12,7 @@ export const textContent = {
 	eventDate: 'Feb 14, 2022',
 	time: '6 to 10pm',
 	picture: '/paul-guitar.png',
+	fileName: `quick-flyer`,
 }
 
 type FlyerContextType = {
@@ -24,6 +25,7 @@ type FlyerContextType = {
 		eventDate: string
 		time: string
 		picture: string
+		fileName: string
 	}
 
 	setFlyerContent: React.Dispatch<
@@ -36,6 +38,7 @@ type FlyerContextType = {
 			eventDate: string
 			time: string
 			picture: string
+			fileName: string
 		}>
 	>
 }
