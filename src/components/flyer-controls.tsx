@@ -1,7 +1,7 @@
 /** @format */
 
 'use client'
-import { useEffect, useState, useRef, useContext } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { FlyerContext } from '@/providers/flyer-context'
 import { format } from 'date-fns'
 import {
@@ -26,12 +26,15 @@ import {
 	PopoverTrigger,
 } from '@/components/ui/popover'
 import { CirclePicker } from 'react-color'
+import { Colorful } from '@uiw/react-color'
 
 export const FlyerControls = () => {
 	const { flyerContent, setFlyerContent = () => {} } =
 		useContext(FlyerContext) || {}
 
 	const [date, setDate] = useState<Date>()
+
+	const [hex, setHex] = useState('#3BD2B5')
 
 	useEffect(() => {
 		if (!date) return
@@ -217,7 +220,28 @@ export const FlyerControls = () => {
 					<Palette className='mr-2 h-4 w-4' />
 					Theme Color:
 				</Label>
-				<CirclePicker />
+				<Colorful
+					style={{ width: 335, borderRadius: 4, marginBottom: 24 }}
+					color={hex}
+					onChange={(color) => {
+						setHex(color.hex)
+					}}
+				/>
+				<CirclePicker
+					width={'335'}
+					circleSize={32}
+					circleSpacing={0}
+					colors={[
+						'#FFAA00',
+						'#CCFF00',
+						'#3FFF00',
+						'#3399FF',
+						'#6F00FF',
+						'#BC13FE',
+						'#FF55A3',
+						'#FF006C',
+					]}
+				/>
 			</div>
 		</div>
 	)

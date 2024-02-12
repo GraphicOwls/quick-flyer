@@ -14,7 +14,7 @@ export default function Home() {
 				{/* CONTAINER */}
 				<div className='flex flex-col items-center justify-center flex-grow relative p-6 canvas-container'>
 					{/* CANVAS */}
-					<div className='flyer-element w-full max-w-[620px] aspect-3/4 bg-tertiary border border-border rounded-3xl overflow-hidden relative z-20 p-6'>
+					<div className='flyer-element w-full max-w-[620px] aspect-3/4 bg-tertiary border border-border rounded-3xl overflow-hidden relative z-20'>
 						<FlyerOne />
 					</div>
 					<ModeToggle className='absolute top-6 right-6' />

@@ -83,3 +83,14 @@
 		@apply bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#212121_1px,transparent_1px)] [background-size:16px_16px];
 	}
 }
+
+html.dark .w-color-alpha.w-color-alpha-horizontal.w-color-colorful {
+	background-image: url('/bg-transparent-tile.png') !important;
+	background-color: #09090b !important;
+}
+
+.circle-picker {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
