@@ -2,13 +2,13 @@
 
 /* FONTS */
 
-@import url("https://use.typekit.net/cqt4nlh.css");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  @import url('https://use.typekit.net/cqt4nlh.css');
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -89,7 +89,7 @@
 }
 
 html.dark .w-color-alpha.w-color-alpha-horizontal.w-color-colorful {
-  background-image: url("/bg-transparent-tile.png") !important;
+  background-image: url('/bg-transparent-tile.png') !important;
   background-color: #09090b !important;
 }
 

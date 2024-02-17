@@ -311,7 +311,7 @@ export const FlyerControls = () => {
         <CollapsibleContent className='grid gap-6'>
           <div className='block'>
             <Label
-              htmlFor='theme-color'
+              htmlFor='primary-color'
               className='mb-4 flex items-center justify-between'
             >
               <span className='flex items-center justify-start'>
@@ -340,13 +340,14 @@ export const FlyerControls = () => {
                     primary: color.hex,
                   }))
                 }
+                console.log(color)
               }}
               disableAlpha={true}
             />
           </div>
           <div className='block'>
             <Label
-              htmlFor='theme-color'
+              htmlFor='secondary-color'
               className='mb-4 flex items-center justify-between'
             >
               <span className='flex items-center justify-start'>
