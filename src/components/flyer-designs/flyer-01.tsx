@@ -32,7 +32,7 @@ const FlyerOne = () => {
           </span>
         </div>
         <span
-          className='block rounded-l-md py-5 pl-6 pr-10 font-veneer text-4xl leading-none'
+          className='block rounded-l-md pb-4 pl-6 pr-10 pt-5 font-veneer text-4xl leading-none'
           style={{
             backgroundColor: themeSettings?.primary,
             color: themeSettings?.secondary,
@@ -62,7 +62,7 @@ const FlyerOne = () => {
           style={{ backgroundColor: themeSettings?.secondary }}
         >
           <h1
-            className='relative z-30 rounded-md border px-6 py-3 text-center font-veneer text-5xl font-normal'
+            className='relative z-30 rounded-md border px-6 pb-1 pt-3 text-center font-veneer text-5xl font-normal'
             style={{
               borderColor: themeSettings?.primary + '2A',
               backgroundColor: themeSettings?.primary + '1A',
