@@ -34,40 +34,41 @@
  * @format
  * @license MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
  */
+@import url('https://use.typekit.net/cqt4nlh.css');
 
 @font-face {
-	font-family: 'LibertadMonoThin';
-	src:
-		url('./LibertadMonoThin/font.woff2') format('woff2'),
-		url('./LibertadMonoThin/font.woff') format('woff');
+  font-family: 'LibertadMonoThin';
+  src:
+    url('./LibertadMonoThin/font.woff2') format('woff2'),
+    url('./LibertadMonoThin/font.woff') format('woff');
 }
 @font-face {
-	font-family: 'LibertadMonoRegular';
-	src:
-		url('./LibertadMonoRegular/font.woff2') format('woff2'),
-		url('./LibertadMonoRegular/font.woff') format('woff');
+  font-family: 'LibertadMonoRegular';
+  src:
+    url('./LibertadMonoRegular/font.woff2') format('woff2'),
+    url('./LibertadMonoRegular/font.woff') format('woff');
 }
 @font-face {
-	font-family: 'LibertadMonoMedium';
-	src:
-		url('./LibertadMonoMedium/font.woff2') format('woff2'),
-		url('./LibertadMonoMedium/font.woff') format('woff');
+  font-family: 'LibertadMonoMedium';
+  src:
+    url('./LibertadMonoMedium/font.woff2') format('woff2'),
+    url('./LibertadMonoMedium/font.woff') format('woff');
 }
 @font-face {
-	font-family: 'LibertadMonoLight';
-	src:
-		url('./LibertadMonoLight/font.woff2') format('woff2'),
-		url('./LibertadMonoLight/font.woff') format('woff');
+  font-family: 'LibertadMonoLight';
+  src:
+    url('./LibertadMonoLight/font.woff2') format('woff2'),
+    url('./LibertadMonoLight/font.woff') format('woff');
 }
 @font-face {
-	font-family: 'LibertadMonoBold';
-	src:
-		url('./LibertadMonoBold/font.woff2') format('woff2'),
-		url('./LibertadMonoBold/font.woff') format('woff');
+  font-family: 'LibertadMonoBold';
+  src:
+    url('./LibertadMonoBold/font.woff2') format('woff2'),
+    url('./LibertadMonoBold/font.woff') format('woff');
 }
 @font-face {
-	font-family: 'LibertadMonoBlack';
-	src:
-		url('./LibertadMonoBlack/font.woff2') format('woff2'),
-		url('./LibertadMonoBlack/font.woff') format('woff');
+  font-family: 'LibertadMonoBlack';
+  src:
+    url('./LibertadMonoBlack/font.woff2') format('woff2'),
+    url('./LibertadMonoBlack/font.woff') format('woff');
 }
