@@ -1,11 +1,11 @@
 /** @format */
-"use client"
+'use client'
 
-import { FlyerControls } from "@/components/flyer-controls"
-import FlyerOne from "@/components/flyer-designs/flyer-01"
-import { ModeToggle } from "@/components/mode-toggle"
-import { Zap } from "lucide-react"
-import DownloadButton from "@/components/download-button"
+import { FlyerControls } from '@/components/flyer-controls'
+import FlyerOne from '@/components/flyer-designs/flyer-01'
+import { ModeToggle } from '@/components/mode-toggle'
+import { Zap } from 'lucide-react'
+import DownloadButton from '@/components/download-button'
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         {/* CONTAINER */}
         <div className='canvas-container relative flex flex-grow flex-col items-center justify-center p-6'>
           {/* CANVAS */}
-          <div className='flyer-element relative z-20 h-[800px] w-full max-w-[600px] overflow-hidden rounded-3xl border border-border bg-tertiary'>
+          <div className='flyer-element relative z-20 h-[840px] w-full max-w-[600px] overflow-hidden rounded-3xl border border-border bg-tertiary'>
             <FlyerOne />
           </div>
           <ModeToggle className='absolute right-6 top-6' />

@@ -8,7 +8,7 @@ export const textContent = {
   artist: 'Artist Name',
   guestArtists: 'with Special Guests',
   venueName: 'The House of Blues',
-  venueMark: 'at Disney Springs',
+  venueSubtitle: 'at Disney Springs',
   address: '1490 E Buena Vista Dr, Orlando, FL 32830',
   eventDate: format(new Date(), 'ccc LLL do'),
   time: '6 to 10pm',
@@ -21,7 +21,7 @@ type FlyerContextType = {
     artist: string
     guestArtists: string
     venueName: string
-    venueMark: string
+    venueSubtitle: string
     address: string
     eventDate: string
     time: string
@@ -34,7 +34,7 @@ type FlyerContextType = {
       artist: string
       guestArtists: string
       venueName: string
-      venueMark: string
+      venueSubtitle: string
       address: string
       eventDate: string
       time: string

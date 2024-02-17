@@ -101,7 +101,7 @@ export const FlyerControls = () => {
         <Input
           id='artist'
           type='text'
-          placeholder='Paul Dmon Band'
+          placeholder='Artist Name'
           onChange={(e) => handleChange(e, 'Artist Name')}
         />
       </div>
@@ -116,7 +116,7 @@ export const FlyerControls = () => {
         <Input
           id='guest-artists'
           type='text'
-          placeholder='with Gerry Wiggins, Red Calendar, etc.'
+          placeholder='with Special Guests'
           onChange={(e) => handleChange(e, 'with Special Guests')}
         />
       </div>
@@ -137,14 +137,14 @@ export const FlyerControls = () => {
       </div>
       <div>
         <Label
-          htmlFor='venue-mark'
+          htmlFor='venue-subtitle'
           className='mb-2 flex items-center justify-start'
         >
           <Building2 className='mr-2 h-4 w-4' />
-          Venue Mark:
+          Venue Subtitle:
         </Label>
         <Input
-          id='venue-mark'
+          id='venue-subtitle'
           type='text'
           placeholder='At Disney Springs'
           onChange={(e) => handleChange(e, 'At Disney Springs')}

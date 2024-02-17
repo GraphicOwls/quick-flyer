@@ -95,14 +95,19 @@ const FlyerOne = () => {
           Join us at
         </span>
         <h2
-          className='font-veneer text-6xl font-normal'
+          className='font-veneer text-5xl font-normal'
           style={{ color: themeSettings?.primary }}
         >
           {flyerContent?.venueName}
         </h2>
-        {/* <h3 className='mt-1 text-lg font-light'>{flyerContent?.venueMark}</h3> */}
+        <h3
+          className='mt-1 font-libertadRegular text-lg font-light'
+          style={{ color: themeSettings?.primary }}
+        >
+          {flyerContent?.venueSubtitle}
+        </h3>
         <p
-          className='-mt-2 w-full px-6 py-4 text-center font-libertadRegular text-lg font-light leading-relaxed'
+          className='mt-2 w-full px-6 py-4 text-center font-libertadRegular text-lg font-light leading-relaxed'
           style={{ color: themeSettings?.primary }}
         >
           {flyerContent?.address}
