@@ -101,7 +101,7 @@ const FlyerOne = () => {
           {flyerContent?.venueName}
         </h2>
         <h3
-          className='mt-1 font-libertadRegular text-lg font-light'
+          className='mt-1 font-veneer text-2xl font-light'
           style={{ color: themeSettings?.primary }}
         >
           {flyerContent?.venueSubtitle}
