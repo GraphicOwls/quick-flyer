@@ -3,8 +3,6 @@
 import { useContext } from 'react'
 import { FlyerContext } from '@/providers/flyer-context'
 import { FlyerThemeContext } from '@/providers/flyer-theme-context'
-import '@/styles/Quick_Flyer.css'
-import '@/styles/veneer.css'
 import Image from 'next/image'
 import { AudioWaveform } from 'lucide-react'
 
@@ -91,7 +89,7 @@ const FlyerOne = () => {
       </div>
       <div className='relative z-30 flex w-full flex-col items-center justify-center'>
         <span
-          className='mb-2 block uppercase'
+          className='mb-2 block font-libertadRegular uppercase'
           style={{ color: themeSettings?.primary }}
         >
           Join us at

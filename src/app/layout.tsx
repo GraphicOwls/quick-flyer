@@ -2,6 +2,8 @@
 
 import type { Metadata } from 'next'
 import '../styles/globals.css'
+import '../../public/veneer.css'
+import '../styles/Quick_Flyer.css'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { FlyerProvider } from '@/providers/flyer-context'
 import { FlyerThemeProvider } from '@/providers/flyer-theme-context'
