@@ -13,19 +13,19 @@ const FlyerOne = () => {
 
   return (
     <div
-      className='relative h-full'
+      className='relative h-full uppercase'
       style={{ backgroundColor: themeSettings?.secondary }}
     >
       <div className='flex items-start justify-between pb-6 pl-10 pt-10'>
         <div className='flex flex-col items-start justify-start'>
           <span
-            className='-mb-2 block font-veneer text-6xl leading-none'
+            className='block font-veneer text-6xl leading-none'
             style={{ color: themeSettings?.primary }}
           >
             Live Music
           </span>
           <span
-            className='items-top flex justify-start font-libertadRegular text-[1.4rem]'
+            className='items-top flex justify-start font-libertadMedium text-[1.5rem]'
             style={{ color: themeSettings?.primary }}
           >
             <AudioWaveform className='mr-2 mt-[2px] inline-block' size={24} />
@@ -33,7 +33,7 @@ const FlyerOne = () => {
           </span>
         </div>
         <span
-          className='block rounded-l-md pb-3 pl-6 pr-10 pt-6 font-veneer text-4xl leading-none'
+          className='block rounded-l-md py-5 pl-6 pr-10 font-veneer text-4xl leading-none'
           style={{
             backgroundColor: themeSettings?.primary,
             color: themeSettings?.secondary,
@@ -63,7 +63,7 @@ const FlyerOne = () => {
           style={{ backgroundColor: themeSettings?.secondary }}
         >
           <h1
-            className='relative z-30 rounded-md border px-6 pt-4 text-center font-veneer text-5xl font-normal'
+            className='relative z-30 rounded-md border px-6 py-3 text-center font-veneer text-5xl font-normal'
             style={{
               borderColor: themeSettings?.primary + '2A',
               backgroundColor: themeSettings?.primary + '1A',
@@ -90,7 +90,7 @@ const FlyerOne = () => {
       </div>
       <div className='relative z-30 flex w-full flex-col items-center justify-center'>
         <span
-          className='mb-4 block uppercase'
+          className='mb-2 block uppercase'
           style={{ color: themeSettings?.primary }}
         >
           Join us at
