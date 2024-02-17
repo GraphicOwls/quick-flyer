@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { FlyerContext } from '@/providers/flyer-context'
 import { FlyerThemeContext } from '@/providers/flyer-theme-context'
 import '@/styles/Quick_Flyer.css'
+import '@/styles/veneer.css'
 import Image from 'next/image'
 import { AudioWaveform } from 'lucide-react'
 
