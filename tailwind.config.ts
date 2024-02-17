@@ -82,7 +82,7 @@ const config = {
         '3/4': '3 / 4',
       },
       fontFamily: {
-        veneer: ['Veneer-Three', 'sans-serif'],
+        veneer: ['var(--font-veneer)'],
         libertadThin: ['LibertadMonoThin', 'sans-serif'],
         libertadLight: ['LibertadMonoLight', 'sans-serif'],
         libertadRegular: ['LibertadMonoRegular', 'sans-serif'],

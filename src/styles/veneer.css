@@ -10,8 +10,8 @@
 @font-face {
   font-family: 'Veneer';
   src:
-    url('/fonts/Veneer-ThreeItalic.woff2') format('woff2'),
-    url('/fonts/Veneer-ThreeItalic.woff') format('woff');
+    url('../../public/fonts/Veneer-ThreeItalic.woff2') format('woff2'),
+    url('../../public/fonts/Veneer-ThreeItalic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
@@ -19,8 +19,8 @@
 @font-face {
   font-family: 'Veneer';
   src:
-    url('/fonts/Veneer-Two.woff2') format('woff2'),
-    url('/fonts/Veneer-Two.woff') format('woff');
+    url('../../public/fonts/Veneer-Two.woff2') format('woff2'),
+    url('../../public/fonts/Veneer-Two.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
@@ -28,8 +28,8 @@
 @font-face {
   font-family: 'Veneer';
   src:
-    url('/fonts/Veneer-TwoItalic.woff2') format('woff2'),
-    url('/fonts/Veneer-TwoItalic.woff') format('woff');
+    url('../../public/fonts/Veneer-TwoItalic.woff2') format('woff2'),
+    url('../../public/fonts/Veneer-TwoItalic.woff') format('woff');
   font-weight: 500;
   font-style: italic;
 }
@@ -37,8 +37,8 @@
 @font-face {
   font-family: 'Veneer';
   src:
-    url('/fonts/Veneer-Extras.woff2') format('woff2'),
-    url('/fonts/Veneer-Extras.woff') format('woff');
+    url('../../public/fonts/Veneer-Extras.woff2') format('woff2'),
+    url('../../public/fonts/Veneer-Extras.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -46,8 +46,8 @@
 @font-face {
   font-family: 'Veneer';
   src:
-    url('/fonts/Veneer-ExtrasItalic.woff2') format('woff2'),
-    url('/fonts/Veneer-ExtrasItalic.woff') format('woff');
+    url('../../public/fonts/Veneer-ExtrasItalic.woff2') format('woff2'),
+    url('../../public/fonts/Veneer-ExtrasItalic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
@@ -55,8 +55,8 @@
 @font-face {
   font-family: 'Veneer';
   src:
-    url('/fonts/Veneer-Italic.woff2') format('woff2'),
-    url('/fonts/Veneer-Italic.woff') format('woff');
+    url('../../public/fonts/Veneer-Italic.woff2') format('woff2'),
+    url('../../public/fonts/Veneer-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
@@ -64,8 +64,8 @@
 @font-face {
   font-family: 'Veneer';
   src:
-    url('/fonts/Veneer.woff2') format('woff2'),
-    url('/fonts/Veneer.woff') format('woff');
+    url('../../public/fonts/Veneer.woff2') format('woff2'),
+    url('../../public/fonts/Veneer.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
