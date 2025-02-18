@@ -1,39 +1,48 @@
 /** @format */
 
-import { useContext } from 'react'
+import { useContext, useCallback } from 'react'
 import { FlyerContext } from '@/providers/flyer-context'
 import { Button } from './ui/button'
 import { toast } from 'sonner'
-import { HardDriveDownload, Zap } from 'lucide-react'
-import html2canvas from 'html2canvas'
+import { HardDriveDownload } from 'lucide-react'
+import { toPng } from 'html-to-image'
 
-const DownloadButton = () => {
-	const { flyerContent } = useContext(FlyerContext) || {}
+interface DownloadButtonProps {
+  elementRef: React.RefObject<HTMLDivElement>
+}
 
-	function downloadImage() {
-		const canvas = document.querySelector('.flyer-element') as HTMLDivElement
+const DownloadButton: React.FC<DownloadButtonProps> = ({ elementRef }) => {
+  const { flyerContent } = useContext(FlyerContext) || {}
 
-		html2canvas(canvas, { backgroundColor: 'null' }).then((canvas) => {
-			const link = document.createElement('a')
-			link.download = `${flyerContent?.artist}--${flyerContent?.eventDate}.png`
-			link.href = canvas.toDataURL('image/png')
-			link.click()
-			toast.success('Your image has started downloading! 🎉')
-		})
-	}
+  const downloadImage = useCallback(() => {
+    if (elementRef.current === null) return
 
-	return (
-		<div className='p-6 bg-background border-t border-border'>
-			<Button
-				className='w-full flex items-center justify-center'
-				variant={'default'}
-				onClick={downloadImage}
-			>
-				Download Image
-				<HardDriveDownload className='ml-3 h-4 w-4' />
-			</Button>
-		</div>
-	)
+    toPng(elementRef.current, { cacheBust: true })
+      .then((dataUrl) => {
+        const link = document.createElement('a')
+        link.download = `${flyerContent?.artist}--${flyerContent?.eventDate}.png`
+        link.href = dataUrl
+        link.click()
+        toast.success('Your image has started downloading! 🎉')
+      })
+      .catch((err) => {
+        console.log(err)
+        toast.error('Something went wrong!')
+      })
+  }, [elementRef, flyerContent])
+
+  return (
+    <div className='border-t border-border bg-background p-6'>
+      <Button
+        className='flex w-full items-center justify-center'
+        variant={'default'}
+        onClick={downloadImage}
+      >
+        Download Image
+        <HardDriveDownload className='ml-3 h-4 w-4' />
+      </Button>
+    </div>
+  )
 }
 
 export default DownloadButton

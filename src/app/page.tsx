@@ -1,6 +1,7 @@
 /** @format */
 'use client'
 
+import { useRef } from 'react'
 import { FlyerControls } from '@/components/flyer-controls'
 import FlyerOne from '@/components/flyer-designs/flyer-01'
 import { ModeToggle } from '@/components/mode-toggle'
@@ -8,14 +9,19 @@ import { Zap } from 'lucide-react'
 import DownloadButton from '@/components/download-button'
 
 export default function Home() {
+  const flyerRef = useRef<HTMLDivElement>(null)
+
   return (
     <main className='h-svh'>
       <div className='flex h-full items-stretch justify-stretch'>
         {/* CONTAINER */}
         <div className='canvas-container relative flex flex-grow flex-col items-center justify-center p-6'>
           {/* CANVAS */}
-          <div className='flyer-element relative z-20 h-[840px] w-full max-w-[600px] overflow-hidden rounded-3xl border border-border bg-tertiary'>
-            <FlyerOne />
+          <div
+            ref={flyerRef}
+            className='flyer-element relative z-20 h-[840px] w-full max-w-[600px] overflow-hidden rounded-3xl border border-border bg-tertiary'
+          >
+            <FlyerOne ref={flyerRef} />
           </div>
           <ModeToggle className='absolute right-6 top-6' />
         </div>
@@ -26,7 +32,7 @@ export default function Home() {
             <h3 className='text-lg font-bold'>Quick Flyer</h3>
           </div>
           <FlyerControls />
-          <DownloadButton />
+          <DownloadButton elementRef={flyerRef} />
         </div>
       </div>
     </main>
