@@ -311,7 +311,7 @@ export const FlyerControls = () => {
             >
               <span className='flex items-center justify-start'>
                 <div
-                  className='mr-2 h-4 w-4 rounded-full'
+                  className='mr-2 h-4 w-4 rounded-full border border-border'
                   style={{ backgroundColor: themeSettings?.primary }}
                 ></div>
                 Primary Color:
@@ -347,7 +347,7 @@ export const FlyerControls = () => {
             >
               <span className='flex items-center justify-start'>
                 <div
-                  className='mr-2 h-4 w-4 rounded-full'
+                  className='mr-2 h-4 w-4 rounded-full border border-border'
                   style={{ backgroundColor: themeSettings?.secondary }}
                 ></div>
                 Secondary Color:
@@ -368,7 +368,7 @@ export const FlyerControls = () => {
                 if (setThemeSettings) {
                   setThemeSettings((themeSettings) => ({
                     ...themeSettings,
-                    seconday: color.hex,
+                    secondary: color.hex,
                   }))
                 }
               }}
