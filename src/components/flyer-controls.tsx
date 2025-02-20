@@ -38,8 +38,14 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
+// import { ColorPicker, Dialog, DialogTrigger } from 'react-aria-components'
+// import { MyColorSwatch } from './ColorSwatch'
+// import { MyColorSlider } from './ColorSlider'
+// import { MyColorArea } from './ColorArea'
+// import { MyColorField } from './ColorField'
 
-import { Colorful } from '@uiw/react-color'
+import { Colorful, ColorResult } from '@uiw/react-color'
+import ColorPicker from 'react-best-gradient-color-picker'
 
 export const FlyerControls = () => {
   const { flyerContent, setFlyerContent = () => {} } =
@@ -229,23 +235,6 @@ export const FlyerControls = () => {
             <Palette className='mr-2 h-4 w-4' />
             Theme Presets:
           </span>
-          <span className='absolute right-0 top-1 flex items-center justify-end gap-2 font-libertadRegular text-muted-foreground'>
-            <span className='relative flex items-start pl-3'>
-              <span
-                className='absolute left-0 top-[2px] mr-1 inline-block h-2 w-2 rounded-full'
-                style={{ backgroundColor: themeSettings?.primary }}
-              ></span>
-              {themeSettings?.primary}
-            </span>
-            <span>/</span>
-            <span className='relative flex items-start pl-3'>
-              <span
-                className='absolute left-0 top-[2px] mr-1 inline-block h-2 w-2 rounded-full'
-                style={{ backgroundColor: themeSettings?.secondary }}
-              ></span>
-              {themeSettings?.secondary}
-            </span>
-          </span>
         </Label>
         <div className='grid grid-cols-4 gap-4'>
           {themeSettings?.presets.map((preset, index) => (
@@ -295,7 +284,7 @@ export const FlyerControls = () => {
         >
           <span className='flex items-center justify-start'>
             <Palette className='mr-2 h-4 w-4' />
-            Customize Theme:
+            Customize Colors:
           </span>
           <CollapsibleTrigger asChild>
             <Button size={'icon'} variant={'ghost'} className='h-8 w-8'>
@@ -320,24 +309,25 @@ export const FlyerControls = () => {
                 {themeSettings?.primary}
               </span>
             </Label>
-            <Colorful
-              style={{
-                width: 335,
-                height: 156,
-                borderRadius: 4,
-                marginBottom: 24,
-              }}
-              color={themeSettings?.primary}
+            <ColorPicker
+              value={themeSettings?.primary}
               onChange={(color) => {
                 if (setThemeSettings) {
                   setThemeSettings((themeSettings) => ({
                     ...themeSettings,
-                    primary: color.hex,
+                    primary: color,
                   }))
                 }
-                console.log(color)
               }}
-              disableAlpha={true}
+              hideColorTypeBtns={true}
+              hidePresets={true}
+              hideGradientControls={true}
+              hideColorGuide={true}
+              hideAdvancedSliders={true}
+              hideOpacity={true}
+              width={335}
+              height={156}
+              className={`!bg-transparent`}
             />
           </div>
           <div className='block'>
@@ -356,23 +346,25 @@ export const FlyerControls = () => {
                 {themeSettings?.secondary}
               </span>
             </Label>
-            <Colorful
-              style={{
-                width: 335,
-                height: 156,
-                borderRadius: 4,
-                marginBottom: 24,
-              }}
-              color={themeSettings?.secondary}
+            <ColorPicker
+              value={themeSettings?.secondary}
               onChange={(color) => {
                 if (setThemeSettings) {
                   setThemeSettings((themeSettings) => ({
                     ...themeSettings,
-                    secondary: color.hex,
+                    secondary: color,
                   }))
                 }
               }}
-              disableAlpha={true}
+              hideColorTypeBtns={true}
+              hidePresets={true}
+              hideGradientControls={true}
+              hideColorGuide={true}
+              hideAdvancedSliders={true}
+              hideOpacity={true}
+              width={335}
+              height={156}
+              className={`!bg-transparent`}
             />
           </div>
         </CollapsibleContent>

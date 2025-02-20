@@ -1,73 +1,36 @@
-/**
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are 
- * explicitly restricted from using the Licensed Webfonts(s).
- * 
- * You may obtain a valid license at the URLs below.
- * 
- * Webfont: undefined by undefined
- * URL: https://www.myfonts.comundefined
- * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
- * 
- * Webfont: undefined by undefined
- * URL: https://www.myfonts.comundefined
- * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
- * 
- * Webfont: undefined by undefined
- * URL: https://www.myfonts.comundefined
- * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
- * 
- * Webfont: undefined by undefined
- * URL: https://www.myfonts.comundefined
- * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
- * 
- * Webfont: undefined by undefined
- * URL: https://www.myfonts.comundefined
- * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
- * 
- * Webfont: undefined by undefined
- * URL: https://www.myfonts.comundefined
- * Copyright: Copyright © 2024 Monotype Imaging Inc. All rights reserved.
- * 
- * © 2024 MyFonts Inc.
- *
- * @format
- * @license MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
- */
+@font-face {
+  font-family: 'Libertad';
+  src: url('/fonts/Libertad-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
 @font-face {
-  font-family: 'LibertadMonoThin';
-  src:
-    url('./LibertadMonoThin/font.woff2') format('woff2'),
-    url('./LibertadMonoThin/font.woff') format('woff');
+  font-family: 'LibertadMedium';
+  src: url('/fonts/Libertad-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
 }
+
 @font-face {
-  font-family: 'LibertadMonoRegular';
-  src:
-    url('./LibertadMonoRegular/font.woff2') format('woff2'),
-    url('./LibertadMonoRegular/font.woff') format('woff');
+  font-family: 'LibertadLight';
+  src: url('/fonts/Libertad-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
 }
+
 @font-face {
-  font-family: 'LibertadMonoMedium';
-  src:
-    url('./LibertadMonoMedium/font.woff2') format('woff2'),
-    url('./LibertadMonoMedium/font.woff') format('woff');
+  font-family: 'LibertadMono-Regular';
+  src: url('/fonts/LibertadMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
-  font-family: 'LibertadMonoLight';
-  src:
-    url('./LibertadMonoLight/font.woff2') format('woff2'),
-    url('./LibertadMonoLight/font.woff') format('woff');
-}
-@font-face {
-  font-family: 'LibertadMonoBold';
-  src:
-    url('./LibertadMonoBold/font.woff2') format('woff2'),
-    url('./LibertadMonoBold/font.woff') format('woff');
-}
-@font-face {
-  font-family: 'LibertadMonoBlack';
-  src:
-    url('./LibertadMonoBlack/font.woff2') format('woff2'),
-    url('./LibertadMonoBlack/font.woff') format('woff');
+  font-family: 'LibertadMono-Medium';
+  src: url('/fonts/LibertadMono-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

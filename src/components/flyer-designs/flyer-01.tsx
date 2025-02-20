@@ -30,7 +30,7 @@ const FlyerOne = React.forwardRef<HTMLDivElement, FlyerOneProps>(
               Live Music
             </span>
             <span
-              className='items-top flex justify-start font-libertadMedium text-[1.5rem]'
+              className='items-top font-libertadMono flex justify-start text-[1.5rem]'
               style={{ color: themeSettings?.primary }}
             >
               <AudioWaveform className='mr-2 mt-[2px] inline-block' size={24} />
