@@ -38,13 +38,21 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+
 // import { ColorPicker, Dialog, DialogTrigger } from 'react-aria-components'
 // import { MyColorSwatch } from './ColorSwatch'
 // import { MyColorSlider } from './ColorSlider'
 // import { MyColorArea } from './ColorArea'
 // import { MyColorField } from './ColorField'
 
-import { Colorful, ColorResult } from '@uiw/react-color'
 import ColorPicker from 'react-best-gradient-color-picker'
 
 export const FlyerControls = () => {
@@ -233,66 +241,37 @@ export const FlyerControls = () => {
         >
           <span className='flex items-center justify-start'>
             <Palette className='mr-2 h-4 w-4' />
-            Theme Presets:
-          </span>
-        </Label>
-        <div className='grid grid-cols-4 gap-4'>
-          {themeSettings?.presets.map((preset, index) => (
-            <TooltipProvider key={index}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant='outline'
-                    className='relative overflow-hidden rounded-lg transition-opacity duration-200 hover:opacity-85 focus-visible:outline-2'
-                    style={{ outlineColor: preset.primary }}
-                    onClick={() => {
-                      if (setThemeSettings) {
-                        setThemeSettings((themeSettings) => ({
-                          ...themeSettings,
-                          primary: preset.primary,
-                          secondary: preset.secondary,
-                        }))
-                      }
-                    }}
-                  >
-                    <div
-                      className='absolute z-10 h-full w-full'
-                      style={{
-                        backgroundColor: preset.secondary,
-                      }}
-                    ></div>
-                    <div
-                      className='!absolute left-1 top-1 z-20 !h-5 !w-5 rounded-sm'
-                      style={{
-                        backgroundColor: preset.primary,
-                      }}
-                    ></div>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{preset.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          ))}
-        </div>
-      </div>
-      <Collapsible>
-        <Label
-          htmlFor='theme-color'
-          className='mb-4 flex items-center justify-between'
-        >
-          <span className='flex items-center justify-start'>
-            <Palette className='mr-2 h-4 w-4' />
             Customize Colors:
           </span>
-          <CollapsibleTrigger asChild>
-            <Button size={'icon'} variant={'ghost'} className='h-8 w-8'>
-              <ChevronsUpDown size={20} />
-            </Button>
-          </CollapsibleTrigger>
         </Label>
-        <CollapsibleContent className='grid gap-6'>
+        <div className='mb-6 mt-3 grid'>
+          <Select
+            onValueChange={(value) => {
+              const selectedPreset = themeSettings?.presets.find(
+                (p) => p.name === value
+              )
+              if (setThemeSettings && selectedPreset) {
+                setThemeSettings((themeSettings) => ({
+                  ...themeSettings,
+                  primary: selectedPreset.primary,
+                  secondary: selectedPreset.secondary,
+                }))
+              }
+            }}
+          >
+            <SelectTrigger className='w-full'>
+              <SelectValue placeholder='Choose a preset…' />
+            </SelectTrigger>
+            <SelectContent className='relative z-[9999]'>
+              {themeSettings?.presets.map((preset, index) => (
+                <SelectItem key={index} value={preset.name}>
+                  {preset.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div className='grid gap-6'>
           <div className='block'>
             <Label
               htmlFor='primary-color'
@@ -364,11 +343,11 @@ export const FlyerControls = () => {
               hideOpacity={true}
               width={335}
               height={156}
-              className={`!bg-transparent`}
+              className={`!bg-transparent !text-foreground`}
             />
           </div>
-        </CollapsibleContent>
-      </Collapsible>
+        </div>
+      </div>
     </div>
   )
 }

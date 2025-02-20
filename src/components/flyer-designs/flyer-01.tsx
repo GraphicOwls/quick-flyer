@@ -60,6 +60,7 @@ const FlyerOne = React.forwardRef<HTMLDivElement, FlyerOneProps>(
             className='h-[300px] w-full rounded-md object-cover'
             height={300}
             width={600}
+            priority
           />
         </div>
         <div className='-mt-7 flex items-center justify-center'>

@@ -84,13 +84,42 @@
   }
 }
 
-html.dark .w-color-alpha.w-color-alpha-horizontal.w-color-colorful {
-  background-image: url('/bg-transparent-tile.png') !important;
-  background-color: #09090b !important;
-}
-
-.circle-picker {
+/* .circle-picker {
   display: flex;
   align-items: center;
   justify-content: space-between;
+} */
+
+#rbgcp-control-rightside-wrapper {
+  background-color: var(--card) !important;
+  color: var(--muted-foreground) !important;
+}
+
+#rbgcp-control-rightside-wrapper svg {
+  color: var(--muted-foreground) !important;
+}
+
+#rbgcp-control-rightside-wrapper svg * {
+  fill: currentColor !important;
+}
+
+/* If you need to target specific SVG elements */
+#rbgcp-control-rightside-wrapper svg path,
+#rbgcp-control-rightside-wrapper svg polygon,
+#rbgcp-control-rightside-wrapper svg rect,
+#rbgcp-control-rightside-wrapper svg circle {
+  /* fill: var(--muted-foreground) !important; */
+  stroke: var(--muted-foreground) !important;
+}
+
+#rbgcp-inputs-wrap > div {
+  display: grid;
+  gap: 6px;
+}
+
+#rbgcp-inputs-wrap > div > input {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
 }
