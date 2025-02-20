@@ -15,6 +15,7 @@ import {
   Users,
   Palette,
   ChevronsUpDown,
+  X,
 } from 'lucide-react'
 
 import { Input } from '@/components/ui/input'
@@ -70,6 +71,32 @@ export const FlyerControls = () => {
       eventDate: date ? format(date, 'ccc LLL do') : '',
     }))
   }, [date, setFlyerContent])
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        const base64String = reader.result as string
+        localStorage.setItem('flyerImage', base64String)
+        setFlyerContent((flyerContent) => ({
+          ...flyerContent,
+          image: base64String,
+        }))
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
+  useEffect(() => {
+    const savedImage = localStorage.getItem('flyerImage')
+    if (savedImage && setFlyerContent) {
+      setFlyerContent((flyerContent) => ({
+        ...flyerContent,
+        image: savedImage,
+      }))
+    }
+  }, [setFlyerContent])
 
   const toCamelCase = (str: string): string => {
     return str
@@ -227,12 +254,32 @@ export const FlyerControls = () => {
           <ImageIcon className='mr-2 h-4 w-4' />
           Flyer Image:
         </Label>
-        <Input
-          id='picture'
-          type='file'
-          className='block cursor-pointer bg-tertiary file:text-primary/40'
-          onChange={(e) => handleChange(e, '')}
-        />
+        <div className='relative'>
+          <Input
+            id='picture'
+            type='file'
+            accept='image/*'
+            className='block cursor-pointer bg-tertiary pr-10 file:text-primary/40'
+            onChange={handleImageUpload}
+          />
+          {flyerContent?.image !== '/paul-guitar.png' && (
+            <Button
+              type='button'
+              variant='ghost'
+              size='icon'
+              className='absolute right-0 top-1/2 -translate-y-1/2 px-2'
+              onClick={() => {
+                localStorage.removeItem('flyerImage')
+                setFlyerContent((flyerContent) => ({
+                  ...flyerContent,
+                  image: '/paul-guitar.png',
+                }))
+              }}
+            >
+              <X className='h-4 w-4' />
+            </Button>
+          )}
+        </div>
       </div>
       <div>
         <Label

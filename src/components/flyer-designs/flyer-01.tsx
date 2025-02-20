@@ -55,12 +55,14 @@ const FlyerOne = React.forwardRef<HTMLDivElement, FlyerOneProps>(
         </div>
         <div className='mt-8 px-10'>
           <Image
-            src='/paul-guitar.png'
+            src={flyerContent?.image ?? '/paul-guitar.png'}
             alt='Flyer Image'
             className='h-[300px] w-full rounded-md object-cover'
             height={300}
             width={600}
             priority
+            unoptimized
+            loader={({ src }) => src}
           />
         </div>
         <div className='-mt-7 flex items-center justify-center'>
