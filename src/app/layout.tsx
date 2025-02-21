@@ -25,6 +25,18 @@ const veneer = localFont({
 export const metadata: Metadata = {
   title: 'Quick Flyer - Flyer creator for shows',
   description: 'Generate a quick flyer for your event!',
+  openGraph: {
+    title: 'Quick Flyer - Flyer creator for shows',
+    description: 'Generate a quick flyer for your event!',
+    images: [
+      {
+        url: '/opengraph-image.png', // Path relative to the public directory
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({

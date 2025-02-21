@@ -29,30 +29,12 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible'
-import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-
-// import { ColorPicker, Dialog, DialogTrigger } from 'react-aria-components'
-// import { MyColorSwatch } from './ColorSwatch'
-// import { MyColorSlider } from './ColorSlider'
-// import { MyColorArea } from './ColorArea'
-// import { MyColorField } from './ColorField'
 
 import ColorPicker from 'react-best-gradient-color-picker'
 

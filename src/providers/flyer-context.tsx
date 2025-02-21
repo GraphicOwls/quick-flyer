@@ -12,7 +12,6 @@ interface FlyerContent {
   address: string
   eventDate: string
   time: string
-  picture: string
   fileName: string
   image: string
 }
@@ -25,8 +24,7 @@ const defaultFlyerContent: FlyerContent = {
   address: '1490 E Buena Vista Dr, Orlando, FL 32830',
   eventDate: format(new Date(), 'ccc LLL do'),
   time: '6pm to 10pm',
-  picture: '',
-  fileName: '',
+  fileName: 'Music-Event-Flyer',
   image: '/paul-guitar.png',
 }
 
@@ -39,7 +37,7 @@ export const textContent = {
   eventDate: format(new Date(), 'ccc LLL do'),
   time: '6 to 10pm',
   picture: '/paul-guitar.png',
-  fileName: `quick-flyer`,
+  fileName: `Music-Event-Flyer`,
 }
 
 type FlyerContextType = {
@@ -51,7 +49,6 @@ type FlyerContextType = {
     address: string
     eventDate: string
     time: string
-    picture: string
     fileName: string
     image: string
   }
@@ -65,7 +62,6 @@ type FlyerContextType = {
       address: string
       eventDate: string
       time: string
-      picture: string
       fileName: string
       image: string
     }>

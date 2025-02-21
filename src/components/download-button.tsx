@@ -20,7 +20,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ elementRef }) => {
     toPng(elementRef.current, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement('a')
-        link.download = `${flyerContent?.artist}--${flyerContent?.eventDate}.png`
+        link.download = `${flyerContent?.fileName}.png`
         link.href = dataUrl
         link.click()
         toast.success('Your image has started downloading! 🎉')
@@ -32,13 +32,13 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ elementRef }) => {
   }, [elementRef, flyerContent])
 
   return (
-    <div className='border-t border-border bg-background p-6'>
+    <div className='w-full'>
       <Button
         className='flex w-full items-center justify-center'
         variant={'default'}
         onClick={downloadImage}
       >
-        Download Image
+        Download Flyer
         <HardDriveDownload className='ml-3 h-4 w-4' />
       </Button>
     </div>
