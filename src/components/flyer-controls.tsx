@@ -14,7 +14,6 @@ import {
   User,
   Users,
   Palette,
-  ChevronsUpDown,
   X,
 } from 'lucide-react'
 
