@@ -36,6 +36,7 @@ import {
 } from '@/components/ui/select'
 
 import ColorPicker from 'react-best-gradient-color-picker'
+import tinycolor from 'tinycolor2'
 
 export const FlyerControls = () => {
   const { flyerContent, setFlyerContent = () => {} } =
@@ -310,7 +311,7 @@ export const FlyerControls = () => {
                   className='mr-2 h-4 w-4 rounded-full border border-border'
                   style={{ backgroundColor: themeSettings?.primary }}
                 ></div>
-                Primary Color:
+                Text Color:
               </span>
               <span className='font-libertadLight text-muted-foreground'>
                 {themeSettings?.primary}
@@ -322,7 +323,7 @@ export const FlyerControls = () => {
                 if (setThemeSettings) {
                   setThemeSettings((themeSettings) => ({
                     ...themeSettings,
-                    primary: color,
+                    primary: tinycolor(color).toHexString(),
                   }))
                 }
               }}
@@ -347,7 +348,7 @@ export const FlyerControls = () => {
                   className='mr-2 h-4 w-4 rounded-full border border-border'
                   style={{ backgroundColor: themeSettings?.secondary }}
                 ></div>
-                Secondary Color:
+                Background Color:
               </span>
               <span className='font-libertadLight text-muted-foreground'>
                 {themeSettings?.secondary}
@@ -359,7 +360,7 @@ export const FlyerControls = () => {
                 if (setThemeSettings) {
                   setThemeSettings((themeSettings) => ({
                     ...themeSettings,
-                    secondary: color,
+                    secondary: tinycolor(color).toHexString(),
                   }))
                 }
               }}
