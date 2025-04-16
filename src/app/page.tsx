@@ -35,7 +35,7 @@ export default function Home() {
           {/* CANVAS */}
           <div
             ref={flyerRef}
-            className='flyer-element relative z-20 min-h-[840px] w-full max-w-[600px] overflow-hidden rounded-2xl border border-border bg-tertiary'
+            className='flyer-element relative z-20 min-h-[840px] w-full max-w-[600px] overflow-hidden border border-border bg-tertiary'
           >
             <FlyerOne ref={flyerRef} />
           </div>
